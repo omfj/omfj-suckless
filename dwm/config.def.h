@@ -46,21 +46,21 @@ static const Rule rules[] = {
 /* multimedia keys */
 #include <X11/XF86keysym.h>
 
-static const char *volup[]        = { "/usr/bin/ovolume", "up",            NULL };
-static const char *voldown[]      = { "/usr/bin/ovolume", "down",          NULL };
-static const char *volmute[]      = { "/usr/bin/ovolume", "mute",          NULL };
-static const char *volupsmall[]   = { "/usr/bin/ovolume", "up",   "small", NULL };
-static const char *voldownsmall[] = { "/usr/bin/ovolume", "down", "small", NULL };
+static const char *volup[]        = { "/usr/local/bin/ovolume", "up",            NULL };
+static const char *voldown[]      = { "/usr/local/bin/ovolume", "down",          NULL };
+static const char *volmute[]      = { "/usr/local/bin/ovolume", "mute",          NULL };
+static const char *volupsmall[]   = { "/usr/local/bin/ovolume", "up",   "small", NULL };
+static const char *voldownsmall[] = { "/usr/local/bin/ovolume", "down", "small", NULL };
 
 /* backlight */
-static const char *blup[]   = { "/usr/bin/obrightness", "up",   NULL };
-static const char *bldown[] = { "/usr/bin/obrightness", "down", NULL };
+static const char *blup[]   = { "/usr/local/bin/obrightness", "up",   NULL };
+static const char *bldown[] = { "/usr/binal/bin/obrightness", "down", NULL };
 
 /* betterlockscreen */ 
 static const char *lockscreen[] = { "betterlockscreen", "-l", "blur", NULL };
 
 /* powermenu */
-static const char *powermenu[] = { "/usr/bin/opowermenu", NULL };
+static const char *powermenu[] = { "/usr/local/bin/opowermenu", NULL };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -75,7 +75,7 @@ static const Layout layouts[] = {
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
  	{ "[@]",      spiral },
- 	{ "[\\]",      dwindle },
+ 	{ "[\\]",     dwindle },
 };
 
 /* key definitions */
@@ -108,12 +108,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return,                zoom,           {0} },
 	{ MODKEY,                       XK_Tab,                   view,           {0} },
 	{ MODKEY,                       XK_q,                     killclient,     {0} },
-    { MODKEY,                       XK_x,                     spawn,          {.v = lockscreen } },
+        { MODKEY,                       XK_x,                     spawn,          {.v = lockscreen } },
 	{ MODKEY,                       XK_t,                     setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,                     setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,                     setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_r,                     setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_r,                     setlayout,      {.v = &layouts[4]} },
+	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
 	{ MODKEY,                       XK_space,                 setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,                 togglefloating, {0} },
 	{ MODKEY,                       XK_0,                     view,           {.ui = ~0 } },
