@@ -14,11 +14,11 @@ static const int showsystray             = 1;     /* 0 means no systray */
 static const int showbar                 = 1;     /* 0 means no bar */
 static const int topbar                  = 1;     /* 0 means bottom bar */
 static const char dmenufont[]            = "FiraCode Nerd Font:size=13";
-static const char col_gray1[]            = "#222222"; /* behind tags */
+static const char col_gray1[]            = "#333333"; /* unselected tags */
 static const char col_gray2[]            = "#444444"; /* also behind? */
 static const char col_gray3[]            = "#bbbbbb"; /* wtf? */
-static const char col_gray4[]            = "#eeeeee"; /* foreground? */
-static const char col_fore[]             = "#2A2B2D"; /* foreground */
+static const char col_gray4[]            = "#eeeeee"; /* text color? */
+static const char col_fore[]             = "#202020"; /* selected tags and title */
 static const char col_bord[]             = "#9A9A9A"; /* border color */
 static const char *colors[][3]           = {
 	/*               fg         bg         border   */
