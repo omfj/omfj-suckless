@@ -4,7 +4,7 @@
 static const unsigned int borderpx       = 3;        /* border pixel of windows */
 static const unsigned int gappx          = 8;        /* gaps between windows */
 static const int swallowfloating         = 1;        /* 1 means swallow floating windows by default */
-static const char *fonts[]               = { "FiraCode Nerd Font:size=13" };
+static const char *fonts[]               = { "BlexMono Nerd Font:size=13" };
 static const unsigned int snap           = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft  = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
@@ -13,7 +13,7 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray             = 1;     /* 0 means no systray */
 static const int showbar                 = 1;     /* 0 means no bar */
 static const int topbar                  = 1;     /* 0 means bottom bar */
-static const char dmenufont[]            = "FiraCode Nerd Font:size=13";
+static const char dmenufont[]            = "BlexMono Nerd Font:size=13";
 static const char col_gray1[]            = "#333333"; /* unselected tags */
 static const char col_gray2[]            = "#444444"; /* also behind? */
 static const char col_gray3[]            = "#bbbbbb"; /* wtf? */
@@ -46,21 +46,21 @@ static const Rule rules[] = {
 /* multimedia keys */
 #include <X11/XF86keysym.h>
 
-static const char *volup[]        = { "/usr/local/bin/ovolume", "up",            NULL };
-static const char *voldown[]      = { "/usr/local/bin/ovolume", "down",          NULL };
-static const char *volmute[]      = { "/usr/local/bin/ovolume", "mute",          NULL };
-static const char *volupsmall[]   = { "/usr/local/bin/ovolume", "up",   "small", NULL };
-static const char *voldownsmall[] = { "/usr/local/bin/ovolume", "down", "small", NULL };
+static const char *volup[]        = { "ovolume", "up",            NULL };
+static const char *voldown[]      = { "ovolume", "down",          NULL };
+static const char *volmute[]      = { "ovolume", "mute",          NULL };
+static const char *volupsmall[]   = { "ovolume", "up",   "small", NULL };
+static const char *voldownsmall[] = { "ovolume", "down", "small", NULL };
 
 /* backlight */
-static const char *blup[]   = { "/usr/local/bin/obrightness", "up",   NULL };
-static const char *bldown[] = { "/usr/binal/bin/obrightness", "down", NULL };
+static const char *blup[]   = { "obrightness", "up",   NULL };
+static const char *bldown[] = { "obrightness", "down", NULL };
 
 /* betterlockscreen */ 
 static const char *lockscreen[] = { "betterlockscreen", "-l", "blur", NULL };
 
 /* powermenu */
-static const char *powermenu[] = { "/usr/local/bin/opowermenu", NULL };
+static const char *powermenu[] = { "opowermenu", NULL };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -114,7 +114,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,                     setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_r,                     setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_r,                     setlayout,      {.v = &layouts[4]} },
-	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
+	{ MODKEY|ShiftMask,             XK_f,                     fullscreen,     {0} },
 	{ MODKEY,                       XK_space,                 setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,                 togglefloating, {0} },
 	{ MODKEY,                       XK_0,                     view,           {.ui = ~0 } },
