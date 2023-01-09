@@ -16,4 +16,4 @@ jobs:
     - name: dwm exists
       run: cd dwm
     - name: build dwm
-      run: make
+      run: make dwm
